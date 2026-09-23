@@ -2,6 +2,8 @@
 
 A basic web app using **Java 21** and **Spring Boot 4.1.1**, with plain HTML, CSS, and JavaScript.
 
+![Spring Boot Controls Demo web interface](docs/images/2026-09-22_21-27-51.png)
+
 ## Requirements
 
 - JDK 21 (set `JAVA_HOME` to your JDK 21 installation)
