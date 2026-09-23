@@ -31,7 +31,7 @@ Thymeleaf or a database; form submissions are validated and echoed without persi
 mvn spring-boot:run
 ```
 
-Open http://localhost:8080. Stop the app with Ctrl+C.
+Open http://localhost:8082. Stop the app with Ctrl+C.
 
 On this Windows machine, you can select the installed Java 21 JDK for the current PowerShell session:
 
@@ -57,7 +57,9 @@ java -jar target/controls-demo-0.0.1-SNAPSHOT.jar
 ```
 
 Integration tests start a real HTTP server and check the home page, form submission,
-and rejection of invalid input. To use another port, pass `--server.port=8081` to the jar.
+and rejection of invalid input. The default port is configured in
+`src/main/resources/application.properties`. To use another port, pass
+`--server.port=8083` to the jar.
 
 ## Project structure
 
@@ -67,6 +69,7 @@ src/main/java/com/example/controlsdemo/
 └── DemoController.java                # POST /api/demo handler and validated Submission record
 
 src/main/resources/
+├── application.properties            # Server configuration (port 8082)
 └── static/
     ├── index.html                    # Form page and submission summary
     ├── styles.css                    # Responsive page styling
