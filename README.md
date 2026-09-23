@@ -4,6 +4,22 @@ A basic web app using **Java 21** and **Spring Boot 4.1.1**, with plain HTML, CS
 
 ![Spring Boot Controls Demo web interface](docs/images/2026-09-22_21-27-51.png)
 
+## Tech Stack
+
+| Technology | Purpose |
+| --- | --- |
+| Java 21 | Backend language |
+| Spring Boot 4.1.1 | Application configuration and executable JAR packaging |
+| Spring Web MVC | REST controller and static web content, via `spring-boot-starter-webmvc` |
+| Embedded Apache Tomcat | HTTP server |
+| Jakarta Bean Validation | Server-side form validation, via `spring-boot-starter-validation` |
+| HTML, CSS, and vanilla JavaScript | Responsive interface and form controls; Fetch API for JSON submissions |
+| Maven | Dependency management, builds, and tests |
+| JUnit Jupiter and AssertJ | HTTP integration tests, via `spring-boot-starter-test` |
+
+The frontend is served from `src/main/resources/static`. This project does not use
+Thymeleaf or a database; form submissions are validated and echoed without persistence.
+
 ## Requirements
 
 - JDK 21 (set `JAVA_HOME` to your JDK 21 installation)
