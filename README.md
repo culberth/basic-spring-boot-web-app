@@ -59,8 +59,19 @@ java -jar target/controls-demo-0.0.1-SNAPSHOT.jar
 Integration tests start a real HTTP server and check the home page, form submission,
 and rejection of invalid input. To use another port, pass `--server.port=8081` to the jar.
 
-## Layout
+## Project structure
 
-- `src/main/java/com/example/controlsdemo`: application entry point and JSON controller
-- `src/main/resources/static`: web page, stylesheet, and browser JavaScript
-- `src/test/java/com/example/controlsdemo`: HTTP integration tests
+```text
+src/main/java/com/example/controlsdemo/
+├── ControlsDemoApplication.java       # Spring Boot entry point
+└── DemoController.java                # POST /api/demo handler and validated Submission record
+
+src/main/resources/
+└── static/
+    ├── index.html                    # Form page and submission summary
+    ├── styles.css                    # Responsive page styling
+    └── app.js                        # Form controls, JSON submission, and result display
+
+src/test/java/com/example/controlsdemo/
+└── ControlsDemoApplicationTests.java  # HTTP integration tests
+```
