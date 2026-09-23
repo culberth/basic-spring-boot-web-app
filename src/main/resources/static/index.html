@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spring Boot · Controls Demo</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+</head>
+<body>
+<main>
+    <header>
+        <p class="eyebrow">SPRING BOOT / JAVA 21</p>
+        <h1>A little control room.</h1>
+        <p>Try the controls, submit the form, and see what your server receives.</p>
+    </header>
+    <div class="layout">
+        <section class="card" aria-labelledby="form-title">
+            <h2 id="form-title">Make it yours</h2>
+            <p class="muted">A small playground for everyday form controls.</p>
+            <form id="demo-form">
+                <label for="name">Your name <span class="muted">(required)</span></label>
+                <input id="name" name="name" type="text" placeholder="e.g. Alex" maxlength="80" autocomplete="given-name" required>
+
+                <div class="row">
+                    <div>
+                        <label for="language">Favorite language</label>
+                        <select id="language" name="language">
+                            <option>Java</option><option>Kotlin</option><option>Groovy</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="date">Pick a date</label>
+                        <input id="date" name="date" type="date" required>
+                    </div>
+                </div>
+
+                <label class="slider-label" for="enthusiasm">Enthusiasm <output id="slider-value" for="enthusiasm">50%</output></label>
+                <input id="enthusiasm" name="enthusiasm" type="range" min="0" max="100" value="50">
+                <div class="range-labels"><span>Just curious</span><span>All in!</span></div>
+
+                <fieldset>
+                    <legend>Theme preference</legend>
+                    <div class="choices">
+                        <label><input type="radio" name="theme" value="Light" checked> Light</label>
+                        <label><input type="radio" name="theme" value="Dark"> Dark</label>
+                        <label><input type="radio" name="theme" value="System"> System</label>
+                    </div>
+                </fieldset>
+                <label class="check"><input type="checkbox" name="notifications"> I'd like notifications</label>
+                <p class="hint">Preferences are demo values only.</p>
+
+                <label for="notes">A few notes <span class="muted">(optional)</span></label>
+                <textarea id="notes" name="notes" rows="3" maxlength="500" placeholder="What would you like to build?"></textarea>
+                <div class="actions">
+                    <button type="submit" id="submit">Submit to server <span aria-hidden="true">→</span></button>
+                    <button type="reset" class="secondary">Reset</button>
+                </div>
+                <p id="status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+        <aside class="card result" aria-labelledby="result-title">
+            <span class="badge">SERVER RESPONSE</span>
+            <h2 id="result-title">Your choices, reflected.</h2>
+            <p class="muted">Submit the form to see the values returned by Spring Boot.</p>
+            <div id="empty-state">Your result will appear here.</div>
+            <dl id="result" hidden></dl>
+            <p class="footnote">Nothing is saved. Refresh the page for a fresh start.</p>
+        </aside>
+    </div>
+    <footer>Simple controls. One Spring Boot app. No extra frontend framework.</footer>
+</main>
+</body>
+</html>
